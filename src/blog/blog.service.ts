@@ -10,5 +10,9 @@ export class BlogService {
     async findAll(): Promise<Blog[]> {
         return this.blogRepository.find();
     }
+
+    async create(post: Blog): Promise<Blog> {
+        return this.blogRepository.save(post);
+    }
 }
 

@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Blog } from '../blog/blog.entity';
+import { Dairy } from '../dairy/dairy.entity';
 
 require('dotenv').config();
 
@@ -13,7 +14,7 @@ require('dotenv').config();
             username: process.env.POSTGRES_USERNAME,
             password: process.env.POSTGRES_PASSWORD,
             database: process.env.POSTGRES_DATABASE,
-            entities: [Blog],
+            entities: [Blog, Dairy],
             synchronize: true
         })
     ]
